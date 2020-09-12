@@ -1,7 +1,7 @@
 {
-  "name": "dndtools",
+  "name": "FriendGames",
   "version": "1.0.0",
-  "description": "me make tools for D&D, me update this more later",
+  "description": "tool for steam games in common app thing",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,7 +9,7 @@
     "build": "webpack --mode development",
     "deploy": "gh-pages -d dist"
   },
-  "author": "Michael Barre (meeees)",
+  "author": "Chandler Palmer (Theemuman)",
   "license": "ISC",
   "devDependencies": {
     "@babel/cli": "^7.11.6",
