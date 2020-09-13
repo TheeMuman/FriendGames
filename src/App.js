@@ -1,7 +1,6 @@
 import React, { Component, useRef, useState } from 'react';
 import { hot } from 'react-hot-loader';
 import './App.css';
-import fetch from 'node-fetch';
 import cheerio from 'cheerio';
 import img from '@assets/test.jpg';
 
@@ -41,6 +40,7 @@ function AppComponent() {
       <img src={img} />
   <button onClick={() => setCount(count + 1)}>Button!</button>  */}
     <GetIDs/>
+    <DrawGame name='game of the name' gameImage={img}/>
     </div>
   );
 }
@@ -63,19 +63,39 @@ function GetIDs(){
 
 function Scrape(ID1, ID2){
   let Games = [];
-  let url1 = 'https://steamcommunity.com/profiles/' + '76561198066208630' + '/games/?tab=all';
-  let url2 = 'https://steamcommunity.com/profiles/' + '76561198066208630' + '/games/?tab=all';
+  let url1 = 'https://cors-anywhere.herokuapp.com/steamcommunity.com/profiles/' + '76561198066208630' + '/games/?tab=all';
+  let url2 = 'https://cors-anywhere.herokuapp.com/steamcommunity.com/profiles/' + '76561198066208630' + '/games/?tab=all';
   
   //<div class="gameListRowItemName ellipsis">GameName</div>
-  fetch(url1, {mode: 'no-cors'})
-    .then(res => console.log(res));
-  let getData = html =>{
-    
-  };
-  
+  //id = "games_list_rows"
+  fetch(url1)
+    .then(function (res){
+      console.log(res);
+      return res.text();
+    }).then(function (data){
+      console.log('this is our html i think\n', data);
+      var list = [];
+      
+
+    }).catch (function(err){
+      console.warn('There was an error', err);
+    });
+
   Games = ['made it', ' i can show you what games you have but i cant decide for you'];
   console.log('fuck this');
   return(Games);
+}
+
+function DrawGame(props){
+  let name = props.name;
+  let gameImage = props.gameImage;
+  return(
+    <div>
+      <p>{name}</p>
+      <img src={gameImage} style={{width:'10rem'}}/>
+    </div>
+  );
+
 }
 
 
