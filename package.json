@@ -1,7 +1,7 @@
 {
   "name": "friendgame",
   "version": "1.0.0",
-  "description": "me make tools for D&D, me update this more later",
+  "description": "tool for steam games in common app thing",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
